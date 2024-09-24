@@ -2,7 +2,9 @@
 
 ### Nginx server configuration for multiple server
 
+```
 server {
+
     listen 80 default_server;
 
     location / {
@@ -27,4 +29,6 @@ server {
         sub_filter_once off;
 
     }
+    
 }
+```
