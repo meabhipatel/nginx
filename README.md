@@ -1,6 +1,6 @@
 # nginx
 
-### Nginx server configuration for multiple server
+### Nginx server configuration for multiple server on same domain
 
 ```
 server {
@@ -30,5 +30,23 @@ server {
 
     }
     
+}
+```
+
+### Nginx basic server configuration for multiple server on same domain
+```
+server {
+    listen 80 default_server;
+
+    location / {
+        proxy_pass http://localhost:3000/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+    location /blogs/ {
+        proxy_pass http://localhost:8080/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
 }
 ```
