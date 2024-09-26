@@ -1,5 +1,15 @@
 # nginx
 
+### Installation of Nginx
+- Update you system with below command
+```
+sudo apt update
+```
+- Now install nginx
+  ```
+  sudo apt install nginx
+  ```
+
 ### Nginx server configuration for multiple server on same domain
 
 ```
