@@ -50,3 +50,17 @@ server {
     }
 }
 ```
+
+### Generate an SSL Certificate with Certbot
+- Certbot is a free tool to obtain and install SSL certificates from Let’s Encrypt. Install Certbot:
+  ```
+  sudo apt install certbot python3-certbot-nginx
+  ```
+- Run Certbot to obtain the certificate:
+  ```
+  sudo certbot --nginx -d example.com -d www.example.com
+  ``` 
+- Certbot sets up a cron job to renew your certificates automatically. You can check the renewal process with:
+  ```
+  sudo certbot renew --dry-run
+  ```
